@@ -53,7 +53,7 @@ public class CardService {
     }
 
     public Card findCardByName(String name) {
-        log.info("Searching for card: {}", name);
+        log.info("Searching for card by name: {}", name);
         Card card = cardRepository.findByName(name)
                 .orElseGet(() -> {
                     Card cardFromApi = ygoProDeckComponent.getCardByName(name)
@@ -64,6 +64,7 @@ public class CardService {
     }
 
     public Card findCardById(Long id) {
+        log.info("Searching for card by id: {}", id);
         Card card = cardRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Card not found"));
         return ensureCardImagesInR2(card);
