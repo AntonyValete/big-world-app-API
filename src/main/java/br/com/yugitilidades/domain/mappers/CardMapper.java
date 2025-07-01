@@ -66,6 +66,7 @@ public interface CardMapper {
     @Mapping(target = "name", source = "name")
     @Mapping(target = "type", expression = "java(card.getType() != null ? card.getType().getValue() : null)")
     @Mapping(target = "race", expression = "java(card.getRace() != null ? card.getRace().getValue() : null)")
+    @Mapping(target = "attribute", expression = "java(card.getAttribute() != null ? card.getAttribute().getValue() : null)")
     @Mapping(target = "atk", source = "atk")
     @Mapping(target = "def", source = "def")
     @Mapping(target = "level", source = "level")

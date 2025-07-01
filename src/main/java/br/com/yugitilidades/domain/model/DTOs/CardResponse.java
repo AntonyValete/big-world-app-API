@@ -12,6 +12,7 @@ public class CardResponse {
     private String name;
     private String type;
     private String race;
+    private String attribute;
     private Integer atk;
     private Integer def;
     private Integer level;
