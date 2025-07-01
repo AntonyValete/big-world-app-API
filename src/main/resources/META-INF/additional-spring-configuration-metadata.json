@@ -1,0 +1,62 @@
+{"properties": [
+  {
+    "name": "ygo-prodeck.api.url",
+    "type": "java.lang.String",
+    "description": "A description for 'ygo-prodeck.api.url'"
+  },
+  {
+    "name": "ygo-prodeck.api.key",
+    "type": "java.lang.String",
+    "description": "A description for 'ygo-prodeck.api.key'"
+  },
+  {
+    "name": "cloudflare.r2.region",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudflare.r2.region'"
+  },
+  {
+    "name": "cloudflare.r2.secret.access.key",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudflare.r2.secret.access.key'"
+  },
+  {
+    "name": "cloudflare.r2.endpoint",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudflare.r2.endpoint'"
+  },
+  {
+    "name": "cloudflare.r2.bucket.name",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudflare.r2.bucket.name'"
+  },
+  {
+    "name": "cloudflare.r2.access.key.id",
+    "type": "java.lang.String",
+    "description": "A description for 'cloudflare.r2.access.key.id'"
+  },
+  {
+    "name": "ygo-prodeck.api.db.version",
+    "type": "java.lang.String",
+    "description": "A description for 'ygo-prodeck.api.db.version'"
+  },
+  {
+    "name": "ygo-prodeck.api.images.cards.small",
+    "type": "java.lang.String",
+    "description": "A description for 'ygo-prodeck.api.images.cards.small'"
+  },
+  {
+    "name": "ygo-prodeck.api.images.cards",
+    "type": "java.lang.String",
+    "description": "A description for 'ygo-prodeck.api.images.cards'"
+  },
+  {
+    "name": "ygo-prodeck.api.cardinfo",
+    "type": "java.lang.String",
+    "description": "A description for 'ygo-prodeck.api.cardinfo'"
+  },
+  {
+    "name": "yugitilidades.jwt.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'yugitilidades.jwt.secret'"
+  }
+]}
