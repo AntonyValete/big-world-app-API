@@ -25,7 +25,7 @@ EXPOSE 8081
 # Define variáveis de ambiente dentro do container (default vazias para DB)
 # Se você quiser por um valor default, pode colocar
 ENV DB_URL=""
-ENV DB_USER=""
+ENV DB_USERNAME=""
 ENV DB_PASSWORD=""
 ENV YUGITILIDADES_JWT_SECRET=""
 ENV YGO_PRODECK_API_CARDINFO=""
@@ -48,7 +48,7 @@ ENV JAR_VERSION=${APP_VERSION}
 CMD ["java", "-jar", \
   "-Dspring.profiles.active=${ACTIVE_PROFILE}", \
   "-Dspring.datasource.url=${DB_URL}", \
-  "-Dspring.datasource.username=${DB_USER}", \
+  "-Dspring.datasource.username=${DB_USERNAME}", \
   "-Dspring.datasource.password=${DB_PASSWORD}", \
   "-Dyugitilidades.jwt.secret=${YUGITILIDADES_JWT_SECRET}", \
   "-Dygo-prodeck.api.cardinfo=${YGO_PRODECK_API_CARDINFO}", \
