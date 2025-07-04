@@ -1,4 +1,3 @@
-# Etapa de build
 FROM maven:3.8.7-openjdk-18 AS build
 WORKDIR /build
 
@@ -8,22 +7,15 @@ RUN mvn dependency:go-offline
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Etapa final
 FROM amazoncorretto:17
-
-# Argumentos de build, com valores default
-ARG PROFILE=prod
-ARG APP_VERSION=1.0.0.0
 
 WORKDIR /app
 
-# Copia o artefato gerado
 COPY --from=build /build/target/*.jar app.jar
 
 EXPOSE 8081
+ENV PORT=8081
 
-# Define variáveis de ambiente dentro do container (default vazias para DB)
-# Se você quiser por um valor default, pode colocar
 ENV DB_URL=""
 ENV DB_USERNAME=""
 ENV DB_PASSWORD=""
@@ -40,13 +32,9 @@ ENV CLOUDFLARE_R2_ENDPOINT=""
 ENV CLOUDFLARE_R2_SECRET_ACCESS_KEY=""
 ENV CLOUDFLARE_R2_REGION=""
 
-# Aproveita os ARGs para setar ENV que, por padrão, estará no container
-ENV ACTIVE_PROFILE=${PROFILE}
-ENV JAR_VERSION=${APP_VERSION}
-
-# Passo final: define como o container inicia
 CMD ["java", "-jar", \
-  "-Dspring.profiles.active=${ACTIVE_PROFILE}", \
+  "-Dserver.port=${PORT}", \
+  "-Dspring.profiles.active=prod", \
   "-Dspring.datasource.url=${DB_URL}", \
   "-Dspring.datasource.username=${DB_USERNAME}", \
   "-Dspring.datasource.password=${DB_PASSWORD}", \
