@@ -80,13 +80,9 @@ public class CardService {
         }
         String apiVersion = apiVersionOpt.get();
         ygoProDeckComponent.getAllCards().ifPresent(cards -> {
-            int importedCount = 0;
-            for (Card card : cards) {
-                card.setApiVersion(apiVersion);
-                cardRepository.save(card);
-                importedCount++;
-            }
-            log.info("Imported {} cards from YGOProDeck one by one.", importedCount);
+            cards.forEach(card -> card.setApiVersion(apiVersion));
+            cardRepository.saveAll(cards);
+            log.info("Imported {} cards from YGOProDeck in bulk.", cards.size());
         });
     }
 
